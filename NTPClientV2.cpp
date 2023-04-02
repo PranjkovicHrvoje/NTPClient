@@ -150,6 +150,10 @@ int NTPClient::getSeconds() const {
 }
 int NTPClient::getYears() const{
   return ((this->getEpochTime() / 31556926) + 1970);
+  
+int NTPClient::dayOfTheYear() const{
+  return (((this->getEpochTime()/86400) + 4) % 7);
+}
 }
 
 String NTPClient::getFormattedTime() const {
